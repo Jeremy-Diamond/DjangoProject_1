@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ goal.title }}
+{% endblock %}
+
+{% block content %}
+<section>
+    <h1>{{ goal.title }}</h1>
+    <p>{{ goal.details }}</p>
+    <image 
+        class="goal-image"
+        src="{{ goal.image.url }}"
+        alt="{{ goal.title }}"
+    />
+
+</section>
+
+
+{% endblock %}

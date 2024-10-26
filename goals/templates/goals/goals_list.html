@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Goals
+{% endblock %}
+
+{% block content %}
+<section>
+        <h1>Goals List</h1>
+        {% for goal in goals %}
+            <h2>
+                <a href="{% url 'goals:page' slug=goal.slug %}">
+                    {{ goal.title }}
+                </a>
+            </h2>
+            <p>{{ goal.created_date }} Owner {{ goal.owner }}</p>
+            <p>{{ goal.details }}</p>
+    
+        {% endfor %}
+    </section>
+
+{% endblock %}
